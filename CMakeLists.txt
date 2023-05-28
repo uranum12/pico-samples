@@ -19,3 +19,9 @@ pico_enable_stdio_usb(hello_world 1)
 pico_enable_stdio_uart(hello_world 1)
 pico_add_extra_outputs(hello_world)
 
+add_executable(bme280 src/bme280.c)
+target_link_libraries(bme280 pico_stdlib hardware_gpio hardware_spi)
+pico_enable_stdio_usb(bme280 1)
+pico_enable_stdio_uart(bme280 1)
+pico_add_extra_outputs(bme280)
+
