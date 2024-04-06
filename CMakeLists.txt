@@ -12,3 +12,7 @@ pico_sdk_init()
 if(${PICO_BOARD} STREQUAL pico)
     add_subdirectory(pico)
 endif()
+
+if(${PICO_BOARD} STREQUAL pico_w)
+    add_subdirectory(pico_w)
+endif()
