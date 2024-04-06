@@ -1,0 +1,21 @@
+add_executable(blink blink.c)
+target_link_libraries(blink pico_stdlib hardware_gpio)
+pico_add_extra_outputs(blink)
+
+add_executable(hello_world hello_world.c)
+target_link_libraries(hello_world pico_stdlib)
+pico_enable_stdio_usb(hello_world 1)
+pico_enable_stdio_uart(hello_world 1)
+pico_add_extra_outputs(hello_world)
+
+add_executable(bme280 bme280.c)
+target_link_libraries(bme280 pico_stdlib hardware_gpio hardware_spi)
+pico_enable_stdio_usb(bme280 1)
+pico_enable_stdio_uart(bme280 1)
+pico_add_extra_outputs(bme280)
+
+add_executable(bme280_i2c bme280_i2c.c)
+target_link_libraries(bme280_i2c pico_stdlib hardware_gpio hardware_i2c)
+pico_enable_stdio_usb(bme280_i2c 1)
+pico_enable_stdio_uart(bme280_i2c 1)
+pico_add_extra_outputs(bme280_i2c)
